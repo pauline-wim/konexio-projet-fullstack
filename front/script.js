@@ -8,3 +8,7 @@ function getAllCountries() {
         },
     });
 };
+
+$("#btnShowData").click(function () {
+    getAllCountries();
+});
