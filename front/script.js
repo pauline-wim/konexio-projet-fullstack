@@ -16,10 +16,16 @@ async function getAllCountries() {
             });
         },
     });
-
     return res;
 };
 
-$("#btnShowData").click(function () {
-    getAllCountries();
-});
+async function startProgram() {
+	const countries = await getAllCountries();
+	console.log("Ready to start");
+};
+
+startProgram();
+
+// $("#btnShowData").click(function () {
+    
+// });
