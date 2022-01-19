@@ -1,3 +1,4 @@
+// This function will fetch API:
 async function getAllCountries() {
     const res = await $.ajax({
         url: "https://restcountries.com/v3.1/all",
@@ -19,13 +20,18 @@ async function getAllCountries() {
     return res;
 };
 
+// Making sure the getAllCountries function is fetched
+// before anything else with the async procedure:
 async function startProgram() {
 	const countries = await getAllCountries();
 	console.log("Ready to start");
 };
-
+// --> First function called:
 startProgram();
 
+
+// Here is my interactive button,
+// It will show the countries the user is looking for:
 $("#btnShowData").click(function () {
     $("#countries-list").show();
 });
