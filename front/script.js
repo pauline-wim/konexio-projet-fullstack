@@ -1,5 +1,5 @@
-function getAllCountries() {
-    $.ajax({
+async function getAllCountries() {
+    const res = await $.ajax({
         url: "https://restcountries.com/v3.1/all",
         success: function (data) {
             data.forEach((country) => {
@@ -16,6 +16,8 @@ function getAllCountries() {
             });
         },
     });
+
+    return res;
 };
 
 $("#btnShowData").click(function () {
