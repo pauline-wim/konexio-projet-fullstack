@@ -33,5 +33,10 @@ startProgram();
 // Here is my interactive button,
 // It will show the countries the user is looking for:
 $("#btnShowData").click(function () {
-    $("#countries-list").show();
+    const list = $("#countries-list");
+        if (list.is(":visible")) {
+			list.hide();
+		} else {
+			list.show();
+		};
 });
