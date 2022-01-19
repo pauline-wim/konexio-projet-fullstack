@@ -53,12 +53,25 @@ $("#btnShowData").click(function () {
 // Form button
 $("#searchBtn").click(function () {
     let userEntry = $("#searchInput").val();
-    countries.forEach((el) => {
-        if (el.names === userEntry) {
-            $("#country").html(el.names);
-            $("#capital").html(el.capitales);
-            $("#continent").html(el.continents);
-            $("#flag").html(el.flags);
-        };
-    });
+    if ($('input[name=radioSearch]:checked').val() === "country") {
+        countries.forEach((el) => {
+            if (el.names === userEntry) {
+                $("#country").html(el.names);
+                $("#capital").html(el.capitales);
+                $("#continent").html(el.continents);
+                $("#flag").html(el.flags);
+            };
+        });
+    } else if ($('input[name=radioSearch]:checked').val() === "capital") {
+        countries.forEach((el) => {
+            if (el.capitales === userEntry) {
+                $("#country").html(el.names);
+                $("#capital").html(el.capitales);
+                $("#continent").html(el.continents);
+                $("#flag").html(el.flags);
+            };
+        });
+    } else {
+        return console.log("missing radio input");
+    };
 });
