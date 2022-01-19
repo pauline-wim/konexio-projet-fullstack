@@ -14,13 +14,24 @@
     <button type="submit" id="btnShowData">Show data</button>
     <ul id="countries-list"></ul>
 
+    <!-- Search form -->
     <h2>Search one country at a time:</h2>
-    <form action="">
+    <div id="form">
+        <!-- radio buttons -->
+        <label for="">Search by:</label>
+        <input type="radio" name="radioSearch" id="countrySearch" value="country">
+        <label for="countrySearch">Country name</label>
+        <input type="radio" name="radioSearch" id="capitalSearch" value="capital">
+        <label for="capitalSearch">Capital name</label>
+        <br><br>
+        <!-- search input -->
         <label for="search">What country are you looking for?</label>
         <input type="search" name="search" id="searchInput" placeholder="Type a country name">
-    </form>
-    <button type="submit" id="searchBtn">Search</button>
+        <!-- submit search button -->
+        <button type="submit" id="searchBtn">Search</button>
+    </div>
 
+    <!-- results -->
     <p>Country: <span id="country"></span></p>
     <p>Capital: <span id="capital"></span></p>
     <p>Continent: <span id="continent"></span></p>
