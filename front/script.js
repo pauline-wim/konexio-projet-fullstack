@@ -1,3 +1,5 @@
+const countries = [];
+
 // This function will fetch API:
 async function getAllCountries() {
     const res = await $.ajax({
@@ -14,7 +16,14 @@ async function getAllCountries() {
                         `<li><span>${country.name.common}<span>, ${country.capital}, ${country.continents}, ${country.flag}</li>`
                     );
                 }
+                countries.push({
+                    names: `${country.name.common}`,
+                    capitales: `${country.capital}`,
+                    continents: `${country.continents}`,
+                    flags: `${country.flag}`,
+                });
             });
+            // console.log(countries)
         },
     });
     return res;
@@ -34,9 +43,22 @@ startProgram();
 // It will show the countries the user is looking for:
 $("#btnShowData").click(function () {
     const list = $("#countries-list");
-        if (list.is(":visible")) {
-			list.hide();
-		} else {
-			list.show();
-		};
+    if (list.is(":visible")) {
+        list.hide();
+    } else {
+        list.show();
+    };
+});
+
+// Form button
+$("#searchBtn").click(function () {
+    let userEntry = $("#searchInput").val();
+    countries.forEach((el) => {
+        if (el.names === userEntry) {
+            $("#country").html(el.names);
+            $("#capital").html(el.capitales);
+            $("#continent").html(el.continents);
+            $("#flag").html(el.flags);
+        };
+    });
 });

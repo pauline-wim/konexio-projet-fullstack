@@ -10,8 +10,22 @@
 </head>
 <body>
     <h1>Countries API</h1>
-    <button id="btnShowData">Show data</button>
+    
+    <button type="submit" id="btnShowData">Show data</button>
     <ul id="countries-list"></ul>
+
+    <h2>Search one country at a time:</h2>
+    <form action="">
+        <label for="search">What country are you looking for?</label>
+        <input type="search" name="search" id="searchInput" placeholder="Type a country name">
+    </form>
+    <button type="submit" id="searchBtn">Search</button>
+
+    <p>Country: <span id="country"></span></p>
+    <p>Capital: <span id="capital"></span></p>
+    <p>Continent: <span id="continent"></span></p>
+    <p>Flag: <span id="flag"></span></p>
+
 
     <!-- JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
