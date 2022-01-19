@@ -26,6 +26,6 @@ async function startProgram() {
 
 startProgram();
 
-// $("#btnShowData").click(function () {
-    
-// });
+$("#btnShowData").click(function () {
+    $("#countries-list").show();
+});
