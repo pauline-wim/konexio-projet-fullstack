@@ -1,4 +1,4 @@
-#countries-list {
+#countries-list, #hiddenRegions, #regionResult {
     display: none;
 }
 

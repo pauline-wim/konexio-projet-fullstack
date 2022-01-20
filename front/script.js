@@ -1,4 +1,5 @@
 const countries = [];
+const subregions = [];
 
 // This function will fetch API:
 async function getAllCountries() {
@@ -9,11 +10,11 @@ async function getAllCountries() {
                 // console.log(country);
                 if (country.capital === undefined) {
                     $("#countries-list").append(
-                        `<li><span>${country.name.common}<span>, ${country.continents}, ${country.flag}</li>`
+                        `<li><span>${country.name.common}</span>, ${country.continents}, ${country.flag}</li>`
                     );
                 } else {
                     $("#countries-list").append(
-                        `<li><span>${country.name.common}<span>, ${country.capital}, ${country.continents}, ${country.flag}</li>`
+                        `<li><span>${country.name.common}</span>, ${country.capital}, ${country.continents}, ${country.flag}</li>`
                     );
                 }
                 countries.push({
@@ -21,9 +22,14 @@ async function getAllCountries() {
                     capitales: `${country.capital}`,
                     continents: `${country.continents}`,
                     flags: `${country.flag}`,
+                    regions: `${country.region}`,
+                });
+                subregions.push({
+                    regions: `${country.region}`,
+                    names: `${country.name.common}`,
                 });
             });
-            // console.log(countries)
+            // console.log(subregions);
         },
     });
     return res;
@@ -55,6 +61,8 @@ $("#searchBtn").click(function () {
     let userEntry = $("#searchInput").val();
     if ($('input[name=radioSearch]:checked').val() === "country") {
         $(".radioNotChecked").hide();
+        $("#hiddenRegions").hide();
+        $("#regionResult").hide();
         countries.forEach((el) => {
             if (el.names === userEntry) {
                 $("#country").html(el.names);
@@ -65,6 +73,8 @@ $("#searchBtn").click(function () {
         });
     } else if ($('input[name=radioSearch]:checked').val() === "capital") {
         $(".radioNotChecked").hide();
+        $("#hiddenRegions").hide();
+        $("#regionResult").hide();
         countries.forEach((el) => {
             if (el.capitales === userEntry) {
                 $("#country").html(el.names);
@@ -74,7 +84,63 @@ $("#searchBtn").click(function () {
             };
         });
     } else {
-        $(".radioNotChecked").show();
-        return console.log("missing radio input");
+            $(".radioNotChecked").show();
+            return console.log("missing radio input");
     };
+});
+
+// Subregions search:
+
+$("#subregionSearch").click(function () {
+    $("#hiddenRegions").show();
+    $("#regionResult").show();
+    console.log("show subregions")
+    $("#Africa").click(function () {
+        console.log("Africa");
+        subregions.forEach((el) => {
+            if (el.regions === "Africa") {
+                $("#regionResult").append(`<li>${el.names}</li>`);
+            };
+        });
+    });
+    $("#Americas").click(function () {
+        console.log("Americas");
+        subregions.forEach((el) => {
+            if (el.regions === "Americas") {
+                $("#regionResult").append(`<li>${el.names}</li>`);
+            };
+        });
+    });
+    $("#Antartic").click(function () {
+        console.log("Antartic");
+        subregions.forEach((el) => {
+            if (el.regions === "Antartic") {
+                $("#regionResult").append(`<li>${el.names}</li>`);
+            };
+        });
+    });
+    $("#Asia").click(function () {
+        console.log("Asia");
+        subregions.forEach((el) => {
+            if (el.regions === "Asia") {
+                $("#regionResult").append(`<li>${el.names}</li>`);
+            };
+        });
+    });
+    $("#Europe").click(function () {
+        console.log("Europe");
+        subregions.forEach((el) => {
+            if (el.regions === "Europe") {
+                $("#regionResult").append(`<li>${el.names}</li>`);
+            };
+        });
+    });
+    $("#Oceania").click(function () {
+        console.log("Oceania");
+        subregions.forEach((el) => {
+            if (el.regions === "Oceania") {
+                $("#regionResult").append(`<li>${el.names}</li>`);
+            };
+        });
+    });
 });
