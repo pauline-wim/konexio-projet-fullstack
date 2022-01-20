@@ -60,6 +60,7 @@ $("#btnShowData").click(function () {
 $("#searchBtn").click(function () {
     let userEntry = $("#searchInput").val();
     if ($('input[name=radioSearch]:checked').val() === "country") {
+        $("#searchInput").removeClass("is-invalid");
         $(".radioNotChecked").hide();
         $("#regions").hide();
         $("#regionResult").hide();
@@ -72,6 +73,7 @@ $("#searchBtn").click(function () {
             };
         });
     } else if ($('input[name=radioSearch]:checked').val() === "capital") {
+        $("#searchInput").removeClass("is-invalid");
         $(".radioNotChecked").hide();
         $("#regions").hide();
         $("#regionResult").hide();
