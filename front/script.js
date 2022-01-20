@@ -92,6 +92,11 @@ $("#searchBtn").click(function () {
 // Subregions search:
 $("#regionSearch").click(function () {
     $('select').on('change', function() {
-        alert( this.value );
-      });
+        console.log(this.value);
+        subregions.forEach((el) => {
+            if (el.regions === this.value) {
+                $("#regionResult").append(`<li>${el.names}</li>`);
+            };
+        });
+    });
 });
