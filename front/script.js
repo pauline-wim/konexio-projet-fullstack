@@ -98,9 +98,15 @@ $("#regionSearch").click(function () {
         console.log(this.value);
             regions.forEach((el) => {
                 if (el.regions === userSelect) {
-                    // $("#regionResult").append(`<li>${el.names}</li>`);
-                    $("#regionResult").html(`<li>${el.names}</li>`);
+                    $("#regionResult").append(`<li>${el.names}</li>`);
+                    // $("#regionResult").html(`<li>${el.names}</li>`);
                 };
             });
     });
+});
+
+// Rest button
+$("#reset").click(function () {
+    // console.log("reset");
+    location.reload(true);
 });
