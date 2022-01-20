@@ -34,24 +34,18 @@
                 <label for="countrySearch">Country name</label>
                 <input type="radio" name="radioSearch" id="capitalSearch" value="capital">
                 <label for="capitalSearch">Capital name</label>
-                <input type="radio" name="radioSearch" id="subregionSearch" value="subregion">
-                <label for="subregionSearch">Region name</label>
-                <br><br>
+                <input type="radio" name="radioSearch" id="regionSearch" value="region">
+                <label for="regionSearch">Region name</label>
                 <!-- hidden subregions -->
-                <div id="hiddenRegions">
-                    <input type="radio" name="regionSearch" id="Africa" value="africa">
-                    <label for="africa">Africa</label>
-                    <input type="radio" name="regionSearch" id="Americas" value="america">
-                    <label for="america">Americas</label>
-                    <input type="radio" name="regionSearch" id="Antartic" value="antartic">
-                    <label for="antartic">Antartic</label>
-                    <input type="radio" name="regionSearch" id="Asia" value="asia">
-                    <label for="asia">Asia</label>
-                    <input type="radio" name="regionSearch" id="Europe" value="europe">
-                    <label for="europe">Europe</label>
-                    <input type="radio" name="regionSearch" id="Oceania" value="oceania">
-                    <label for="oceania">Oceania</label>
-                </div>
+                <select name="regionSearch" id="regions">
+                    <option value="Africa">Africa</option>
+                    <option value="America">America</option>
+                    <option value="Antartica">Antartica</option>
+                    <option value="Asia">Asia</option>
+                    <option value="Europe">Europe</option>
+                    <option value="Oceania">Oceania</option>
+                  </select>
+                <br><br>
             </div>
 
             <!-- regular search results -->
