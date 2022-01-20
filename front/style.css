@@ -1,3 +1,8 @@
 #countries-list {
     display: none;
 }
+
+.radioNotChecked {
+    display: none;
+    color: red;
+}

@@ -54,6 +54,7 @@ $("#btnShowData").click(function () {
 $("#searchBtn").click(function () {
     let userEntry = $("#searchInput").val();
     if ($('input[name=radioSearch]:checked').val() === "country") {
+        $(".radioNotChecked").hide();
         countries.forEach((el) => {
             if (el.names === userEntry) {
                 $("#country").html(el.names);
@@ -63,6 +64,7 @@ $("#searchBtn").click(function () {
             };
         });
     } else if ($('input[name=radioSearch]:checked').val() === "capital") {
+        $(".radioNotChecked").hide();
         countries.forEach((el) => {
             if (el.capitales === userEntry) {
                 $("#country").html(el.names);
@@ -72,6 +74,7 @@ $("#searchBtn").click(function () {
             };
         });
     } else {
+        $(".radioNotChecked").show();
         return console.log("missing radio input");
     };
 });
