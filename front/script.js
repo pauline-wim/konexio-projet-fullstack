@@ -85,6 +85,7 @@ $("#searchBtn").click(function () {
         });
     } else {
             $(".radioNotChecked").show();
+            $("#searchInput").addClass("is-invalid");
             return console.log("missing radio input");
     };
 });

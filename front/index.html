@@ -7,50 +7,58 @@
     <title>Countries API</title>
     <!-- links -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bootstrap.css">
 </head>
 <body>
     <header></header>
 
-    <main>
+    <main class="p-4 g-4">
 
         <section>
             <h1>Countries API</h1>
     
-            <button type="submit" id="btnShowData">Show data</button>
+            <button type="submit" id="btnShowData" class="data btn btn-outline-dark">Show data</button>
 
             <!-- Search form -->
             <h2>Search one country at a time:</h2>
+            <br>
             <div id="form">
                 <!-- search input -->
-                <label for="search">What country are you looking for?</label>
-                <input type="search" name="search" id="searchInput" placeholder="Type a country name">
-                <!-- submit search button -->
-                <button type="submit" id="searchBtn">Search</button>
-                <button type="reset" id="reset">Reset</button>
-                <br><br>
-                <!-- radio buttons -->
-                <label for="">Search by:</label>
-                <input type="radio" name="radioSearch" id="countrySearch" value="country">
-                <label for="countrySearch">Country name</label>
-                <input type="radio" name="radioSearch" id="capitalSearch" value="capital">
-                <label for="capitalSearch">Capital name</label>
-                <input type="radio" name="radioSearch" id="regionSearch" value="region">
-                <label for="regionSearch">Region name: </label>
-                <!-- hidden subregions -->
-                <select name="regionSearch" id="regions">
-                    <option value="Africa">Africa</option>
-                    <option value="Americas">Americas</option>
-                    <option value="Antartica">Antartica</option>
-                    <option value="Asia">Asia</option>
-                    <option value="Europe">Europe</option>
-                    <option value="Oceania">Oceania</option>
-                  </select>
+                <label for="search" class="form-label">What country are you looking for?</label>
+                <div class="search-area">
+                    <input type="search" name="search" id="searchInput" class="form-control" placeholder="Type a country name">
+                    <!-- submit search button -->
+                    <button type="submit" id="searchBtn" class="btn btn-outline-dark form-btn">Search</button>
+                    <button type="reset" id="reset" class="btn btn-outline-dark form-btn">Reset</button>
+                </div>
+                <br>
+                <div class="select-area">
+                    <!-- radio buttons -->
+                    <label for="">Search by:</label>
+                    <div class="radio-area">
+                        <input type="radio" name="radioSearch" id="countrySearch" value="country">
+                        <label for="countrySearch" class="">Country name</label>
+                        <input type="radio" name="radioSearch" id="capitalSearch" value="capital">
+                        <label for="capitalSearch" class="">Capital name</label>
+                        <input type="radio" name="radioSearch" id="regionSearch" value="region">
+                        <label for="regionSearch" class="">Region name: </label>
+                    </div>
+                    <!-- hidden subregions -->
+                    <select name="regionSearch" id="regions">
+                        <option value="Africa">Africa</option>
+                        <option value="Americas">Americas</option>
+                        <option value="Antarctic">Antarctic</option>
+                        <option value="Asia">Asia</option>
+                        <option value="Europe">Europe</option>
+                        <option value="Oceania">Oceania</option>
+                    </select>
+                </div>
+                <p class="radioNotChecked">Please select a option to search by.</p>
                 <br><br>
             </div>
 
             <!-- regular search results -->
             <div id="searchResult">
-                <p class="radioNotChecked">Please select a option to search by.</p>
                 <p>Country: <span id="country"></span></p>
                 <p>Capital: <span id="capital"></span></p>
                 <p>Continent: <span id="continent"></span></p>

@@ -10,4 +10,30 @@
 main {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.search-area {
+    display: flex;
+}
+
+.select-area {
+    display: flex;
+    align-items: center;
+}
+
+.radio-area {
+    padding: 0 1rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.data {
+    margin: 1rem 0 2rem;
+}
+
+.form-btn {
+    margin: 0 0 0 1rem;
+    width: 8rem;
 }
