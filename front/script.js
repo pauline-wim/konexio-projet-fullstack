@@ -90,57 +90,8 @@ $("#searchBtn").click(function () {
 });
 
 // Subregions search:
-
-$("#subregionSearch").click(function () {
-    $("#hiddenRegions").show();
-    $("#regionResult").show();
-    console.log("show subregions")
-    $("#Africa").click(function () {
-        console.log("Africa");
-        subregions.forEach((el) => {
-            if (el.regions === "Africa") {
-                $("#regionResult").append(`<li>${el.names}</li>`);
-            };
-        });
-    });
-    $("#Americas").click(function () {
-        console.log("Americas");
-        subregions.forEach((el) => {
-            if (el.regions === "Americas") {
-                $("#regionResult").append(`<li>${el.names}</li>`);
-            };
-        });
-    });
-    $("#Antartic").click(function () {
-        console.log("Antartic");
-        subregions.forEach((el) => {
-            if (el.regions === "Antartic") {
-                $("#regionResult").append(`<li>${el.names}</li>`);
-            };
-        });
-    });
-    $("#Asia").click(function () {
-        console.log("Asia");
-        subregions.forEach((el) => {
-            if (el.regions === "Asia") {
-                $("#regionResult").append(`<li>${el.names}</li>`);
-            };
-        });
-    });
-    $("#Europe").click(function () {
-        console.log("Europe");
-        subregions.forEach((el) => {
-            if (el.regions === "Europe") {
-                $("#regionResult").append(`<li>${el.names}</li>`);
-            };
-        });
-    });
-    $("#Oceania").click(function () {
-        console.log("Oceania");
-        subregions.forEach((el) => {
-            if (el.regions === "Oceania") {
-                $("#regionResult").append(`<li>${el.names}</li>`);
-            };
-        });
-    });
+$("#regionSearch").click(function () {
+    $('select').on('change', function() {
+        alert( this.value );
+      });
 });
