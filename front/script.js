@@ -1,5 +1,5 @@
 const countries = [];
-const subregions = [];
+const regions = [];
 
 // This function will fetch API:
 async function getAllCountries() {
@@ -24,7 +24,7 @@ async function getAllCountries() {
                     flags: `${country.flag}`,
                     regions: `${country.region}`,
                 });
-                subregions.push({
+                regions.push({
                     regions: `${country.region}`,
                     names: `${country.name.common}`,
                 });
@@ -93,7 +93,7 @@ $("#searchBtn").click(function () {
 $("#regionSearch").click(function () {
     $('select').on('change', function() {
         console.log(this.value);
-        subregions.forEach((el) => {
+        regions.forEach((el) => {
             if (el.regions === this.value) {
                 $("#regionResult").append(`<li>${el.names}</li>`);
             };
