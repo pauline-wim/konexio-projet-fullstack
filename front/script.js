@@ -61,7 +61,7 @@ $("#searchBtn").click(function () {
     let userEntry = $("#searchInput").val();
     if ($('input[name=radioSearch]:checked').val() === "country") {
         $(".radioNotChecked").hide();
-        $("#hiddenRegions").hide();
+        $("#regions").hide();
         $("#regionResult").hide();
         countries.forEach((el) => {
             if (el.names === userEntry) {
@@ -73,7 +73,7 @@ $("#searchBtn").click(function () {
         });
     } else if ($('input[name=radioSearch]:checked').val() === "capital") {
         $(".radioNotChecked").hide();
-        $("#hiddenRegions").hide();
+        $("#regions").hide();
         $("#regionResult").hide();
         countries.forEach((el) => {
             if (el.capitales === userEntry) {
@@ -91,6 +91,8 @@ $("#searchBtn").click(function () {
 
 // Subregions search:
 $("#regionSearch").click(function () {
+    $("#regions").show();
+    $("#regionResult").show();
     $('select').on('change', function() {
         console.log(this.value);
         regions.forEach((el) => {
