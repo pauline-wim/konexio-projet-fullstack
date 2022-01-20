@@ -39,8 +39,8 @@ async function startProgram() {
 startProgram();
 
 
-// Here is my interactive button,
-// It will show the countries the user is looking for:
+// Here is my interactive button #btnShowData,
+// It will show the list of countries when clicked:
 $("#btnShowData").click(function () {
     const list = $("#countries-list");
     if (list.is(":visible")) {
@@ -50,7 +50,7 @@ $("#btnShowData").click(function () {
     };
 });
 
-// Form button
+// Form button, shows the country the user searched for:
 $("#searchBtn").click(function () {
     let userEntry = $("#searchInput").val();
     if ($('input[name=radioSearch]:checked').val() === "country") {
