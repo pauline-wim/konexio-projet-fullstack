@@ -9,59 +9,69 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Countries API</h1>
+    <header></header>
+
+    <main>
+
+        <section>
+            <h1>Countries API</h1>
     
-    <button type="submit" id="btnShowData">Show data</button>
-    <ul id="countries-list"></ul>
+            <button type="submit" id="btnShowData">Show data</button>
 
-    <!-- Search form -->
-    <h2>Search one country at a time:</h2>
-    <div id="form">
-        <!-- search input -->
-        <label for="search">What country are you looking for?</label>
-        <input type="search" name="search" id="searchInput" placeholder="Type a country name">
-        <!-- submit search button -->
-        <button type="submit" id="searchBtn">Search</button>
-        <button type="reset" id="reset">Reset</button>
-        <br><br>
-        <!-- radio buttons -->
-        <label for="">Search by:</label>
-        <input type="radio" name="radioSearch" id="countrySearch" value="country">
-        <label for="countrySearch">Country name</label>
-        <input type="radio" name="radioSearch" id="capitalSearch" value="capital">
-        <label for="capitalSearch">Capital name</label>
-        <input type="radio" name="radioSearch" id="subregionSearch" value="subregion">
-        <label for="subregionSearch">Region name</label>
-        <br><br>
-        <!-- hidden subregions -->
-        <div id="hiddenRegions">
-            <input type="radio" name="regionSearch" id="Africa" value="africa">
-            <label for="africa">Africa</label>
-            <input type="radio" name="regionSearch" id="Americas" value="america">
-            <label for="america">Americas</label>
-            <input type="radio" name="regionSearch" id="Antartic" value="antartic">
-            <label for="antartic">Antartic</label>
-            <input type="radio" name="regionSearch" id="Asia" value="asia">
-            <label for="asia">Asia</label>
-            <input type="radio" name="regionSearch" id="Europe" value="europe">
-            <label for="europe">Europe</label>
-            <input type="radio" name="regionSearch" id="Oceania" value="oceania">
-            <label for="oceania">Oceania</label>
-        </div>
-    </div>
-    
-    <!-- region search -->
-    <ul id="regionResult"></ul>
+            <!-- Search form -->
+            <h2>Search one country at a time:</h2>
+            <div id="form">
+                <!-- search input -->
+                <label for="search">What country are you looking for?</label>
+                <input type="search" name="search" id="searchInput" placeholder="Type a country name">
+                <!-- submit search button -->
+                <button type="submit" id="searchBtn">Search</button>
+                <button type="reset" id="reset">Reset</button>
+                <br><br>
+                <!-- radio buttons -->
+                <label for="">Search by:</label>
+                <input type="radio" name="radioSearch" id="countrySearch" value="country">
+                <label for="countrySearch">Country name</label>
+                <input type="radio" name="radioSearch" id="capitalSearch" value="capital">
+                <label for="capitalSearch">Capital name</label>
+                <input type="radio" name="radioSearch" id="subregionSearch" value="subregion">
+                <label for="subregionSearch">Region name</label>
+                <br><br>
+                <!-- hidden subregions -->
+                <div id="hiddenRegions">
+                    <input type="radio" name="regionSearch" id="Africa" value="africa">
+                    <label for="africa">Africa</label>
+                    <input type="radio" name="regionSearch" id="Americas" value="america">
+                    <label for="america">Americas</label>
+                    <input type="radio" name="regionSearch" id="Antartic" value="antartic">
+                    <label for="antartic">Antartic</label>
+                    <input type="radio" name="regionSearch" id="Asia" value="asia">
+                    <label for="asia">Asia</label>
+                    <input type="radio" name="regionSearch" id="Europe" value="europe">
+                    <label for="europe">Europe</label>
+                    <input type="radio" name="regionSearch" id="Oceania" value="oceania">
+                    <label for="oceania">Oceania</label>
+                </div>
+            </div>
 
-    <!-- regular search results -->
-    <div id="searchResult">
-        <p class="radioNotChecked">Please select a option to search by.</p>
-        <p>Country: <span id="country"></span></p>
-        <p>Capital: <span id="capital"></span></p>
-        <p>Continent: <span id="continent"></span></p>
-        <p>Flag: <span id="flag"></span></p>
-    </div>
+            <!-- regular search results -->
+            <div id="searchResult">
+                <p class="radioNotChecked">Please select a option to search by.</p>
+                <p>Country: <span id="country"></span></p>
+                <p>Capital: <span id="capital"></span></p>
+                <p>Continent: <span id="continent"></span></p>
+                <p>Flag: <span id="flag"></span></p>
+            </div>
+        </section>
+        <section class="listResults">
+            <ul id="countries-list"></ul>
+            <!-- region search -->
+            <ul id="regionResult"></ul>
+        </section>
 
+    </main>
+
+    <footer></footer>
 
     <!-- JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
