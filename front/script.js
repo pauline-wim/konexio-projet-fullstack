@@ -96,10 +96,11 @@ $("#regionSearch").click(function () {
     $('select').on('change', function() {
         let userSelect = this.value;
         console.log(this.value);
-        regions.forEach((el) => {
-            if (el.regions === userSelect) {
-                $("#regionResult").append(`<li>${el.names}</li>`);
-            };
-        });
+            regions.forEach((el) => {
+                if (el.regions === userSelect) {
+                    // $("#regionResult").append(`<li>${el.names}</li>`);
+                    $("#regionResult").html(`<li>${el.names}</li>`);
+                };
+            });
     });
 });
